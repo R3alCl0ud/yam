@@ -8,6 +8,7 @@ return (
     <Routes>
         <Route element={<MasterLayout />}>
             <Route path='dashboard' element={<DashboardWrapper />} />
+            <Route path='*' element={<Navigate to='/error/404' />} />
         </Route>
     </Routes>
 );

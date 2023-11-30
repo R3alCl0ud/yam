@@ -5,6 +5,7 @@ import {KTIcon} from '../../../helpers'
 import {Dropdown1} from '../../content/dropdown/Dropdown1'
 import {getCSS, getCSSVariableValue} from '../../../assets/ts/_utils'
 import {useThemeMode} from '../../layout/theme-mode/ThemeModeProvider'
+import {backDate} from "../../../../utility/TimeStuff";
 
 type Props = {
   className: string
@@ -38,6 +39,11 @@ const ChartsWidget1: FC<Props> = ({className}) => {
 
     return chart
   }
+  setTimeout(() => {
+    testData.push({y: randomIntFromInterval(60, 75), x: backDate(1)})
+  }, 1000)
+
+
 
   return (
     <div className={`card ${className}`}>
