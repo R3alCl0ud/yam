@@ -59,10 +59,11 @@ const BasicChart: FC<Props> = ({className, chartID, style = {height: '100%'}, ch
                 return
             // console.log(chartOptions)
             // @ts-ignore
-            chartOptions.data.push({y: randomIntFromInterval(60,75), x: backDate(0.1)})
-            if (chartOptions.data.length > 60) chartOptions.data = chartOptions.data.slice(1)
+            chartOptions.data.push({y: randomIntFromInterval(0,100), x: backDate(0.01)})
+            let datapoints = 6
+            if (chartOptions.data.length > datapoints) chartOptions.data = chartOptions.data.slice(chartOptions.data.length - datapoints)
             chart?.updateSeries([chartOptions]);
-        }, 100)
+        }, 1000)
 
         return () => {
             if (chart) {
